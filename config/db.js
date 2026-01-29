@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-// 1. Setup for Centralized Database (Shared by all products)
+// DB-1
 const centralDB = new Sequelize(
   process.env.CENTRAL_DB_NAME,
   process.env.DB_USER,
@@ -13,7 +13,7 @@ const centralDB = new Sequelize(
   }
 );
 
-// 2. Setup for Project Database (Specific to "Autos" project)
+// DB-2
 const projectDB = new Sequelize(
   process.env.PROJECT_DB_NAME,
   process.env.DB_USER,

@@ -7,16 +7,14 @@ app.use(express.json());
 
 app.use('/api', businessRoutes);
 
-// Sync both databases and start server
 const startServer = async () => {
   try {
     // Authenticate both
     await centralDB.authenticate();
     await projectDB.authenticate();
-    console.log('Both databases connected successfully.');
+    console.log('Both databases connected ');
 
-    // Sync models (creates tables if they don't exist)
-    // Note: In production, use Migrations, not sync()
+    //create is no exist
     await centralDB.sync(); 
     await projectDB.sync();
 
